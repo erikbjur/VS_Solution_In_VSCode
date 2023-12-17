@@ -1,0 +1,6 @@
+*.vsidx
+*.suo
+*.db
+*.ipch
+*.log
+*.recipe

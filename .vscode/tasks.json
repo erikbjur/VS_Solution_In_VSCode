@@ -1,0 +1,101 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build application",
+            "type": "shell",
+            "command": "C:\\Program^ Files\\Microsoft^ Visual^ Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat && msbuild",
+            "args": [
+                "VS_Solution_In_VSCode.sln",
+                "/t:Application",
+                "/p:configuration=debug",
+                "/p:platform=ARM64",
+                // Ask msbuild to generate full paths for file names.
+                //"/property:GenerateFullPaths=true",
+                //"/t:build",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                //"/consoleloggerparameters:NoSummary"
+            ],
+            "options": {
+				"cwd": "${workspaceFolder}"
+			},
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "always"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "clean application",
+            "type": "shell",
+            "command": "C:\\Program^ Files\\Microsoft^ Visual^ Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat && msbuild",
+            "args": [
+                "VS_Solution_In_VSCode.sln",
+                "/t:Application:clean",
+                "/p:configuration=debug",
+                "/p:platform=ARM64",
+                // Ask msbuild to generate full paths for file names.
+                //"/property:GenerateFullPaths=true",
+                //"/t:build",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                //"/consoleloggerparameters:NoSummary"
+            ],
+            "options": {
+				"cwd": "${workspaceFolder}"
+			},
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "always"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build library",
+            "type": "shell",
+            "command": "C:\\Program^ Files\\Microsoft^ Visual^ Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat && msbuild",
+            "args": [
+                "VS_Solution_In_VSCode.sln",
+                "/t:MathLibrary",
+                "/p:configuration=debug",
+                "/p:platform=ARM64"
+            ],
+            "options": {
+				"cwd": "${workspaceFolder}"
+			},
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "always"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "clean library",
+            "type": "shell",
+            "command": "C:\\Program^ Files\\Microsoft^ Visual^ Studio\\2022\\Community\\Common7\\Tools\\VsDevCmd.bat && msbuild",
+            "args": [
+                "VS_Solution_In_VSCode.sln",
+                "/t:MathLibrary:clean",
+                "/p:configuration=debug",
+                "/p:platform=ARM64"
+            ],
+            "options": {
+				"cwd": "${workspaceFolder}"
+			},
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "always"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
